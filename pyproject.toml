@@ -72,7 +72,16 @@ full = [
     "kweb>=0.0.11,<0.1",
     ]
 femwell = ["femwell"]
-database = ["sqlalchemy", "sqlalchemy-utils"]
+database = [
+    "sqlalchemy==2.0.4",
+    "sqlalchemy-utils==0.40.0",
+    "alembic==1.9.4",
+    "pg8000==1.29.4",
+    "python-dotenv==1.0.0",
+    "fire==0.5.0",
+    "fastapi==0.92.0",
+    "uvicorn[standard]==0.20.0",
+    ]
 gmsh = [
     "gmsh",
     "h5py",
@@ -126,6 +135,7 @@ find = {}
 
 [project.scripts]
 gf = "gdsfactory.cli:cli"
+gf-db = "gdsfactory.database.cli:fire_db_cli"
 
 [tool.black]
 line-length = 88
